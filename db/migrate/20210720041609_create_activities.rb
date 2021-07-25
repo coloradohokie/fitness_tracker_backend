@@ -6,7 +6,6 @@ class CreateActivities < ActiveRecord::Migration[6.1]
       t.datetime :date
       t.integer :duration
       t.integer :distance
-      t.integer :calories
       t.timestamps
     end
   end

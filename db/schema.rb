@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2021_07_20_041609) do
     t.datetime "date"
     t.integer "duration"
     t.integer "distance"
-    t.integer "calories"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_activities_on_user_id"
