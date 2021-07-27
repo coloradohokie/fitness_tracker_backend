@@ -1,7 +1,19 @@
 class ActivitiesController < ApplicationController
     def index
         @activities = Activity.all
-        render json: @activities
+        act_list = []
+        @activities.map { |activity| 
+            item = {}
+            user = User.find(activity.user_id)
+            item[:date] = activity.date
+            item[:user_id] = activity.user_id
+            item[:distance] = activity.distance
+            item[:duration] = activity.duration
+            item[:name] = activity.name
+            item[:username] = user.username
+            act_list.push(item)
+        }
+        render json: act_list
     end
 
     def create
